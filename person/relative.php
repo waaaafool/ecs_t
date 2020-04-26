@@ -4,9 +4,6 @@ require_once($dir . '/config.php');
 
 //userId 是可选参数，如果userId有值，说明是获取自已的channel列表，没有值是获取所有的channel。
 $userId    = array_key_exists('userId', $_REQUEST) ? $_REQUEST['userId'] : 0;
-if($listTypes == -1){
-	echoErr('missing args');
-}	
 
 $ret_li = get_like_index($userId);
 if($ret_li['ret'] != 0){
